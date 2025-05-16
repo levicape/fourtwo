@@ -1,20 +1,20 @@
 ---
-title: Fourtwo - Rendering JSX
+title: Fourtwo - 
 titleTemplate: ':title'
 ---
 
-# Rendering a JSX file
-JSX components return a builder instance that has class methods for transforming it's contents into either yaml or json formats.
+# Github Actions
+
 ```jsx
 <GithubWorkflowX
-	name="on Push"
+	name={"on Push"}
 	on={{
 		push: {},
 	}}
 >
 	<GithubJobX
-		id="build"
-		name="Compile, Lint and Test all workspace packages"
+		id={"build"}
+		name={"Step"}
 		runsOn={GithubJobBuilder.defaultRunsOn()}
 		steps={
 			<Fragment>
@@ -25,8 +25,8 @@ JSX components return a builder instance that has class methods for transforming
 							node: "pnpm",
 						},
 						registry: {
-							scope: "@levicape",
-							host: `${env("LEVICAPE_REGISTRY")}`,
+							scope: "@scope",
+							host: `${env("NPM_REGISTRY")}`,
 						},
 						version: {
 							node: "22.13.0",
@@ -37,7 +37,7 @@ JSX components return a builder instance that has class methods for transforming
 							<Fragment>
 								<GithubStepX
 									name="Compile"
-									run={["echo 'Compile all packages'"]}
+									run={["echo 'Hello world'"]}
 								/>
 							</Fragment>
 						);
@@ -46,7 +46,8 @@ JSX components return a builder instance that has class methods for transforming
 			</Fragment>
 		}
 	/>
-</GithubWorkflowX>
+</GithubWorkflowX>;
 ```
 
 
+## 
